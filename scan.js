@@ -7,7 +7,7 @@ var ESTIMOTE_FRAME_TYPE_TELEMETRY = 2;
 var ESTIMOTE_TELEMETRY_SUBFRAME_A = 0;
 var ESTIMOTE_TELEMETRY_SUBFRAME_B = 1;
 
-var file = '/home/pi/beacon_test/logs';
+var file = '/home/pi/Beacon_Scan/logs.txt';
 
 firebase.initializeApp({
 	serviceAccount: "service_Creds.json",

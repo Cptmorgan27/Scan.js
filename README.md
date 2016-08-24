@@ -8,25 +8,28 @@ Firbase needs a service key to access the Firebase databse. Instructions can be 
 
 
 Raspberry Pi Setup
+
 1.	Connect USB mouse and Keyboard, HDMI monitor, and insert SD card.
 2.	Plug power cable into Raspberry Pi
 3.	Follow on screen instruction on installing Raspberain OS
 4.	Next connect to Greenline WiFi
+
 Enable Bluetooth Functionality
+
 1)	Open terminal and enter each line individually, Make sure to press ENTER after each command.
-1)	sudo apt-get update
-2)	sudo apt-get dist-upgrade
-3)	wget http://www.kernel.org/pub/linux/bluetooth/bluez-5.41.tar.xz
-4)	tar xvf bluez-5.41.tar.xz
-5)	cd bluez-5.41 
-6)	sudo apt-get update
-7)	sudo apt-get install -y libusb-dev libdbus-1-dev libglib2.0-dev libudev-dev libical-dev libreadline-dev
-8)	./configure
-9)	make
-10)	sudo make install
-11)	sudo systemctl start Bluetooth
-12)	sudo systemctl enable Bluetooth
-13)	sudo nano /lib/systemd/system/bluetooth.service
+	1)	sudo apt-get update
+	2)	sudo apt-get dist-upgrade
+	3)	wget http://www.kernel.org/pub/linux/bluetooth/bluez-5.41.tar.xz
+	4)	tar xvf bluez-5.41.tar.xz
+	5)	cd bluez-5.41 
+	6)	sudo apt-get update
+	7)	sudo apt-get install -y libusb-dev libdbus-1-dev libglib2.0-dev libudev-dev libical-dev libreadline-dev
+	8)	./configure
+	9)	make
+	10)	sudo make install
+	11)	sudo systemctl start Bluetooth
+	12)	sudo systemctl enable Bluetooth
+	13)	sudo nano /lib/systemd/system/bluetooth.service
 2)	Enable the experimental features by adding --experimental to the ExecStart line, for example the configuration should look like:
 [Service]
 Type=dbus

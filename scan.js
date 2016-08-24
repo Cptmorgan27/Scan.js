@@ -1,5 +1,6 @@
 var noble = require('noble');
-var firebase = require("firebase");
+// Uncomment if firebase is installed
+//var firebase = require("firebase");
 var fs = require("fs");
 
 var ESTIMOTE_FRAME_TYPE_TELEMETRY = 2;
@@ -9,7 +10,8 @@ var ESTIMOTE_TELEMETRY_SUBFRAME_B = 1;
 
 var file = '/home/pi/Beacon_Scan/logs.txt';
 
-firebase.initializeApp({
+//Uncomment if firebase is installed
+/**firebase.initializeApp({
 	serviceAccount: "service_Creds.json",
 	databaseURL: "https://YOUR_APP_HERE.firebaseio.com/"
 });
@@ -17,7 +19,7 @@ firebase.initializeApp({
 var db = firebase.database();
 var ref = db.ref("logs");
 var beaconRef = ref.child("Beacon Movement");
-
+*/
 
 
 
@@ -66,9 +68,10 @@ noble.on('discover', function (peripheral) {
 
         // Here is push up to Firebase
        if(isMoving == true){
-       	indvRef.push({
+       	// Uncomment if firebase isnstalled 
+       	/**indvRef.push({
 		    time_Stamp: new Date().toISOString().replace(/T/, ' ').replace(/\..+/, ''),
-            moved: isMoving});
+            moved: isMoving});*/
 
 		   var obj = JSON.stringify({Beacon: shortIdentifier,
 			   time_Stamp: new Date().toISOString().replace(/T/, ' ').replace(/\..+/, ''),

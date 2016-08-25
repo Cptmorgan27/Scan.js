@@ -81,6 +81,7 @@ D) Running scan.js
 
 1) Open terminal and enter each line individually, Make sure to press ENTER after each command. 
 		1.	sudo node /home/pi/Beacon_Scan/scan.js &
+
 The above command will keep scan.js running indefinitely as long as the Raspberry pi has power.
 
 E) Access logs.txt file

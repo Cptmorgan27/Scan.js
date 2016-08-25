@@ -111,3 +111,28 @@ This will stop the scan.js running in the background
 4) logs.txt file should be located within this folder
 
 5) logs.txt can be emailed or copied to flash drive for later analysis 
+
+F) Add and Make launcher.sh executable
+
+1) Open terminal and enter each line individually, Make sure to press ENTER after each command.
+	
+		cd home/pi/Beacon_Test
+		nano launcher.sh
+
+2) copy and paste launcher.sh code into terminal 
+3) Save and exit with CTRL + X, Y, ENTER
+4) Make launcher.sh executable
+
+		chmod 755 launcher.sh
+		cd
+		mkdir errLogs
+
+5) Now make it so launcher.sh will be ran on startup
+
+		sudo crontab -e
+
+6) This open a file called crontab, which is a file that tell the Raspberry Pi when to do specific things.
+7) Add the following line to the bottom of the file, after the last line that starts with a #
+
+		@reboot sh /home/pi/Beacon_Scan/launcher.sh >/home/pi/errLogs/cronlog 2>&1
+

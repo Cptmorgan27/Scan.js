@@ -8,29 +8,28 @@ Firbase needs a service key to access the Firebase databse. Instructions can be 
 
 
 Raspberry Pi Setup
-
-1.	Connect USB mouse and Keyboard, HDMI monitor, and insert SD card.
+1.	Connect USB mouse and Keyboard, HDMI monitor.
 2.	Plug power cable into Raspberry Pi
-3.	Follow on screen instruction on installing Raspberain OS
-4.	Next connect to Greenline WiFi
-
-Enable Bluetooth Functionality
-
+3.	User: pi
+4.	Password: raspberry
+5.	Next connect to Greenline WiFi
+Steps A-C are for setup for new RaspberryPi. Follow Steps D and E for Data Collection.
+A) Enable Bluetooth Functionality
 1)	Open terminal and enter each line individually, Make sure to press ENTER after each command.
-	1)	sudo apt-get update
-	2)	sudo apt-get dist-upgrade
-	3)	wget http://www.kernel.org/pub/linux/bluetooth/bluez-5.41.tar.xz
-	4)	tar xvf bluez-5.41.tar.xz
-	5)	cd bluez-5.41 
-	6)	sudo apt-get update
-	7)	sudo apt-get install -y libusb-dev libdbus-1-dev libglib2.0-dev libudev-dev libical-dev libreadline-dev
-	8)	./configure
-	9)	make
-	10)	sudo make install
-	11)	sudo systemctl start Bluetooth
-	12)	sudo systemctl enable Bluetooth
-	13)	sudo nano /lib/systemd/system/bluetooth.service
-2)	Enable the experimental features by adding --experimental to the ExecStart line, for example the configuration should look like:
+1)	sudo apt-get update
+2)	sudo apt-get dist-upgrade
+3)	wget http://www.kernel.org/pub/linux/bluetooth/bluez-5.41.tar.xz
+4)	tar xvf bluez-5.41.tar.xz
+5)	cd bluez-5.41 
+6)	sudo apt-get update
+7)	sudo apt-get install -y libusb-dev libdbus-1-dev libglib2.0-dev libudev-dev libical-dev libreadline-dev
+8)	./configure
+9)	make
+10)	sudo make install
+11)	sudo systemctl start Bluetooth
+12)	sudo systemctl enable Bluetooth
+13)	sudo nano /lib/systemd/system/bluetooth.service
+2)	Enable the experimental features by adding --experimental to the ExecStart line, for example the configuration should look like:
 [Service]
 Type=dbus
 BusName=org.bluez
@@ -41,22 +40,23 @@ NotifyAccess=main
 CapabilityBoundingSet=CAP_NET_ADMIN CAP_NET_BIND_SERVICE
 LimitNPROC=1
 
-3)	Save the file and exit the editor by pressing Ctrl-o, enter, then Ctrl-x.
+3)	Save the file and exit the editor by pressing Ctrl-o, enter, then Ctrl-x.
 
-4)	Now tell systemd to reload its configuration files by running:
+4)	Now tell system to reload its configuration files by running:
 1.	sudo systemctl daemon-reload
 2.	sudo systemctl restart Bluetooth
-Install Node.js
+B) Install Node.js
 
 1)	Open terminal and enter each line individually, Make sure to press ENTER after each command.
-1.	sudo apt-get nodejs-legacy npm
+1.	sudo apt-get install nodejs-legacy npm
 2.	sudo npm install –g n
 3.	sudo n latest
-4.	cd Beacon_Scan/
-5.	sudo npm install noble
+4.	mkdir Beacon_Scan
+5.	cd Beacon_Scan
+6.	sudo npm install noble
 Restart Raspberry Pi
 
-Adding scan.js to monitor beacons
+C) Adding scan.js to monitor beacons
 	
 1.	Open a web browser
 2.	Go to https://github.com/Cptmorgan27/Scan.js 
@@ -69,16 +69,23 @@ Adding scan.js to monitor beacons
 7.	Press CTRL and X 
 8.	Press Y
 9.	Press ENTER
-Running scan.js
+
+
+
+
+
+
+
+D) Running scan.js
 
 1)	Open terminal and enter each line individually, Make sure to press ENTER after each command. 
-1.	node /home/pi/Beacon_Scan/scan.js &
+1.	sudo node /home/pi/Beacon_Scan/scan.js &
 The above command will keep scan.js running indefinitely as long as the Raspberry pi has power.
 
 
 
 
-Access logs.txt file
+E) Access logs.txt file
 
 1)	Open terminal and enter each line individually, Make sure to press ENTER after each command. 
 1.	pkill node

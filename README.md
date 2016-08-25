@@ -49,12 +49,14 @@ A) Enable Bluetooth Functionality
 3) Save the file and exit the editor by pressing Ctrl-o, enter, then Ctrl-x.
 
 4) Now tell system to reload its configuration files by running:
+
 		1.	sudo systemctl daemon-reload
 		2.	sudo systemctl restart Bluetooth
 
 B) Install Node.js
 
 1)Open terminal and enter each line individually, Make sure to press ENTER after each command.
+
 		1.	sudo apt-get install nodejs-legacy npm
 		2.	sudo npm install –g n
 		3.	sudo n latest

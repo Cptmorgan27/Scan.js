@@ -20,19 +20,19 @@ A) Enable Bluetooth Functionality
 
 1) Open terminal and enter each line individually, Make sure to press ENTER after each command.
 
-		1)	sudo apt-get update
-		2)	sudo apt-get dist-upgrade
-		3)	wget http://www.kernel.org/pub/linux/bluetooth/bluez-5.41.tar.xz
-		4)	tar xvf bluez-5.41.tar.xz
-		5)	cd bluez-5.41 
-		6)	sudo apt-get update
-		7)	sudo apt-get install -y libusb-dev libdbus-1-dev libglib2.0-dev libudev-dev libical-dev libreadline-dev
-		8)	./configure
-		9)	make
-		10)	sudo make install
-		11)	sudo systemctl start Bluetooth
-		12)	sudo systemctl enable Bluetooth
-		13)	sudo nano /lib/systemd/system/bluetooth.service
+			sudo apt-get update
+			sudo apt-get dist-upgrade
+			wget http://www.kernel.org/pub/linux/bluetooth/bluez-5.41.tar.xz
+			tar xvf bluez-5.41.tar.xz
+			cd bluez-5.41 
+			sudo apt-get update
+			sudo apt-get install -y libusb-dev libdbus-1-dev libglib2.0-dev libudev-dev libical-dev libreadline-dev
+			./configure
+			make
+			sudo make install
+			sudo systemctl start Bluetooth
+			sudo systemctl enable Bluetooth
+			sudo nano /lib/systemd/system/bluetooth.service
 	
 2) Enable the experimental features by adding --experimental to the ExecStart line, for example the configuration should look like:
 	
@@ -50,23 +50,23 @@ A) Enable Bluetooth Functionality
 
 4) Now tell system to reload its configuration files by running:
 
-		1.	sudo systemctl daemon-reload
-		2.	sudo systemctl restart Bluetooth
+			sudo systemctl daemon-reload
+			sudo systemctl restart Bluetooth
 
 B) Install Node.js
 
 1)Open terminal and enter each line individually, Make sure to press ENTER after each command.
 
-		1.	sudo apt-get install nodejs-legacy npm
-		2.	sudo npm install –g n
-		3.	sudo n latest
-		4.	mkdir Beacon_Scan
-		5.	cd Beacon_Scan
-		6.	sudo npm install noble
+			sudo apt-get install nodejs-legacy npm
+			sudo npm install –g n
+			sudo n latest
+			mkdir Beacon_Scan
+			cd Beacon_Scan
+			sudo npm install noble
 
 Restart Raspberry Pi
 
-		1.	sudo reboot
+			sudo reboot
 C) Adding scan.js to monitor beacons
 	
 1. Open a web browser
@@ -75,8 +75,8 @@ C) Adding scan.js to monitor beacons
 4. select all the text and copy
 5. Open terminal and enter each line individually, Make sure to press ENTER after each command. 
 	
-		1.	cd Beacon_Scan
-		2.	sudo nano scan.js
+			cd Beacon_Scan
+			sudo nano scan.js
 
 6. Paste text from web page
 7. Press CTRL and X 
@@ -87,7 +87,7 @@ D) Running scan.js
 
 1) Open terminal and enter each line individually, Make sure to press ENTER after each command. 
 
-		1.	sudo node /home/pi/Beacon_Scan/scan.js &
+			sudo node /home/pi/Beacon_Scan/scan.js &
 
 The above command will keep scan.js running indefinitely as long as the Raspberry pi has power.
 
@@ -95,11 +95,14 @@ E) Access logs.txt file
 
 1) Open terminal and enter each line individually, Make sure to press ENTER after each command. 
 
-		1.	pkill node
+			pkill node
 
 This will stop the scan.js running in the background
 
 2) Using the Graphical User Interface, access file manager
+
 3) Click to Beacon_Scan folder
+
 4) logs.txt file should be located within this folder
+
 5) logs.txt can be emailed or copied to flash drive for later analysis 

@@ -18,7 +18,7 @@ Steps A-C are for setup for new RaspberryPi. Follow Steps D and E for Data Colle
 
 A) Enable Bluetooth Functionality
 
-	1) Open terminal and enter each line individually, Make sure to press ENTER after each command.
+1) Open terminal and enter each line individually, Make sure to press ENTER after each command.
 
 		1)	sudo apt-get update
 		2)	sudo apt-get dist-upgrade

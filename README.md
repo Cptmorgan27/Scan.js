@@ -8,10 +8,15 @@ Firbase needs a service key to access the Firebase databse. Instructions can be 
 
 
 Raspberry Pi Setup
+
 1. Connect USB mouse and Keyboard, HDMI monitor
+
 2. Plug power cable into Raspberry Pi
+
 3. User: pi
+
 4. Password: raspberry
+
 5. Next connect to Greenline WiFi
 
 Steps A-C are for setup for new RaspberryPi. Follow Steps D and E for Data Collection.

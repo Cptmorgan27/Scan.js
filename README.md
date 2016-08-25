@@ -34,7 +34,7 @@ A) Enable Bluetooth Functionality
 		12)	sudo systemctl enable Bluetooth
 		13)	sudo nano /lib/systemd/system/bluetooth.service
 	
-	2) Enable the experimental features by adding --experimental to the ExecStart line, for example the configuration should look like:
+2) Enable the experimental features by adding --experimental to the ExecStart line, for example the configuration should look like:
 	
 	[Service]
 	Type=dbus
@@ -46,15 +46,15 @@ A) Enable Bluetooth Functionality
 	CapabilityBoundingSet=CAP_NET_ADMIN CAP_NET_BIND_SERVICE
 	LimitNPROC=1
 
-	3) Save the file and exit the editor by pressing Ctrl-o, enter, then Ctrl-x.
+3) Save the file and exit the editor by pressing Ctrl-o, enter, then Ctrl-x.
 
-	4) Now tell system to reload its configuration files by running:
+4) Now tell system to reload its configuration files by running:
 		1.	sudo systemctl daemon-reload
 		2.	sudo systemctl restart Bluetooth
 
 B) Install Node.js
 
-	1)Open terminal and enter each line individually, Make sure to press ENTER after each command.
+1)Open terminal and enter each line individually, Make sure to press ENTER after each command.
 		1.	sudo apt-get install nodejs-legacy npm
 		2.	sudo npm install –g n
 		3.	sudo n latest
@@ -65,30 +65,31 @@ B) Install Node.js
 
 C) Adding scan.js to monitor beacons
 	
-	1. Open a web browser
-	2. Go to https://github.com/Cptmorgan27/Scan.js 
-	3. click on scan.js 
-	4. select all the text and copy
-	5. Open terminal and enter each line individually, Make sure to press ENTER after each command. 
+1. Open a web browser
+2. Go to https://github.com/Cptmorgan27/Scan.js 
+3. click on scan.js 
+4. select all the text and copy
+5. Open terminal and enter each line individually, Make sure to press ENTER after each command. 
 		1.	cd Beacon_Scan
 		2.	sudo nano scan.js
-	6. Paste text from web page
-	7. Press CTRL and X 
-	8. Press Y
-	9. Press ENTER
+6. Paste text from web page
+7. Press CTRL and X 
+8. Press Y
+9. Press ENTER
 
 D) Running scan.js
 
-	1) Open terminal and enter each line individually, Make sure to press ENTER after each command. 
+1) Open terminal and enter each line individually, Make sure to press ENTER after each command. 
 		1.	sudo node /home/pi/Beacon_Scan/scan.js &
-	The above command will keep scan.js running indefinitely as long as the Raspberry pi has power.
+The above command will keep scan.js running indefinitely as long as the Raspberry pi has power.
 
 E) Access logs.txt file
 
-	1) Open terminal and enter each line individually, Make sure to press ENTER after each command. 
+1) Open terminal and enter each line individually, Make sure to press ENTER after each command. 
 		1.	pkill node
-	This will stop the scan.js running in the background
-	2) Using the Graphical User Interface, access file manager
-	3) Click to Beacon_Scan folder
-	4) logs.txt file should be located within this folder
-	5) logs.txt can be emailed or copied to flash drive for later analysis 
+This will stop the scan.js running in the background
+
+2) Using the Graphical User Interface, access file manager
+3) Click to Beacon_Scan folder
+4) logs.txt file should be located within this folder
+5) logs.txt can be emailed or copied to flash drive for later analysis 

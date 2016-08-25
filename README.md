@@ -8,7 +8,7 @@ Firbase needs a service key to access the Firebase databse. Instructions can be 
 
 
 Raspberry Pi Setup
-1. Connect USB mouse and Keyboard, HDMI monitor.
+1. Connect USB mouse and Keyboard, HDMI monitor
 2. Plug power cable into Raspberry Pi
 3. User: pi
 4. Password: raspberry
@@ -63,8 +63,10 @@ B) Install Node.js
 		4.	mkdir Beacon_Scan
 		5.	cd Beacon_Scan
 		6.	sudo npm install noble
-	Restart Raspberry Pi
 
+Restart Raspberry Pi
+
+		1.	sudo reboot
 C) Adding scan.js to monitor beacons
 	
 1. Open a web browser
@@ -72,8 +74,10 @@ C) Adding scan.js to monitor beacons
 3. click on scan.js 
 4. select all the text and copy
 5. Open terminal and enter each line individually, Make sure to press ENTER after each command. 
+	
 		1.	cd Beacon_Scan
 		2.	sudo nano scan.js
+
 6. Paste text from web page
 7. Press CTRL and X 
 8. Press Y
@@ -82,6 +86,7 @@ C) Adding scan.js to monitor beacons
 D) Running scan.js
 
 1) Open terminal and enter each line individually, Make sure to press ENTER after each command. 
+
 		1.	sudo node /home/pi/Beacon_Scan/scan.js &
 
 The above command will keep scan.js running indefinitely as long as the Raspberry pi has power.
@@ -89,7 +94,9 @@ The above command will keep scan.js running indefinitely as long as the Raspberr
 E) Access logs.txt file
 
 1) Open terminal and enter each line individually, Make sure to press ENTER after each command. 
+
 		1.	pkill node
+
 This will stop the scan.js running in the background
 
 2) Using the Graphical User Interface, access file manager

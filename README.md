@@ -17,7 +17,7 @@ Raspberry Pi Setup
 
 4. Password: raspberry
 
-5. Next connect to Greenline WiFi
+5. Next connect to WiFi
 
 Steps A-C are for setup for new RaspberryPi. Follow Steps D and E for Data Collection.
 
